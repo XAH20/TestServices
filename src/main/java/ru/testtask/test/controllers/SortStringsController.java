@@ -14,6 +14,13 @@ public class SortStringsController {
         this.serviceSortStrings = serviceSortStrings;
     }
 
+    /**
+     * Возвращает результат работы сервиса сортировки строки:
+     * по количеству символов, при одинаковом количестве - лексикографически.
+     * Преобразует строки в вид: "(кол-во символов): Строка"
+     * @param request Объект-оболочка для строк
+     * @return Отсортированные строки
+     */
     @PostMapping("/sortStrings")
     public String[] sortStrings (@RequestBody ProcessStringsRequest request) {
         return serviceSortStrings.sortStrings(request);

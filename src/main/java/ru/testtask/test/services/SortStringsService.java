@@ -10,8 +10,13 @@ import java.util.List;
 @Service
 public class SortStringsService {
 
-
-
+    /**
+     * Сортирует строки:
+     * по количеству символов, при одинаковом количестве - лексикографически.
+     * Преобразует строки в вид: "(кол-во символов): Строка"
+     * @param request Объект-оболочка для массива строк
+     * @return Массив преобразованных и отсортироанных строк
+     */
     public String[] sortStrings (ProcessStringsRequest request) {
         List<String> listStrings = new ArrayList<>();
 
