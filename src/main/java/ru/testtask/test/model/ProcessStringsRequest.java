@@ -8,11 +8,18 @@ public class ProcessStringsRequest {
     private String[] strings;
 
     /**
-     * Геттер для массива строк
+     * Геттер для массива строк из запроса
      * @return массив строк
      */
     public String[] getStrings() {
         return strings;
     }
 
+    /**
+     * Сеттер для массива строк из запроса
+     * @param strings Строки
+     */
+    public void setStrings(String[] strings) {
+        this.strings = strings;
+    }
 }

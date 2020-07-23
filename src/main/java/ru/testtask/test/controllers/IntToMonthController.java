@@ -25,10 +25,10 @@ public class IntToMonthController {
      */
     @GetMapping("/getMonth")
     public String getMonth (@Valid GetMonthRequest monthNumber, BindingResult bindingResult) {
-        if (!bindingResult.hasErrors()) {
-            return serviceIntToMonth.getMonth(monthNumber);
+        if (bindingResult.hasErrors()) {
+            return bindingResult.getAllErrors().get(0).getDefaultMessage();
         } else {
-           return bindingResult.getAllErrors().get(0).getDefaultMessage();
+            return serviceIntToMonth.getMonth(monthNumber);
         }
 
     }

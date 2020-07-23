@@ -13,18 +13,18 @@ public class IntToMonthService {
     private Map<Integer, String> months;
 
     /**
-     * Возвращает название месяца в виде строки (в виде "Я-Н-В_А-Р-Ь") по его порядковому номеру
+     * Возвращает название месяца в виде строки (в виде "Я-Н-В-А-Р-Ь") по его порядковому номеру
      * @param request Объект-оболочка для номера месяца
-     * @return
+     * @return Название месяца в виде строки
      */
     public String getMonth(GetMonthRequest request) {
         return months.get(request.getMonth());
     }
 
-    @PostConstruct
     /**
      * Инициализация мапы "номер месяца - название месяца"
      */
+    @PostConstruct
     private void init() {
         months = new HashMap<>();
         String[] monthsString = {"Я-Н-В-А-Р-Ь", "Ф-Е-В-Р-А-Л-Ь", "М-А-Р-Т", "А-П-Р-Е-Л-Ь",
