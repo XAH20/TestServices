@@ -1,14 +1,13 @@
 package ru.testtask.test.controllers;
 
-import org.springframework.validation.BindingResult;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.messaging.handler.annotation.MessageMapping;
+import org.springframework.messaging.handler.annotation.SendTo;
+import org.springframework.stereotype.Controller;
 import ru.testtask.test.model.GetMonthRequest;
+import ru.testtask.test.model.MonthResponce;
 import ru.testtask.test.services.IntToMonthService;
 
-import javax.validation.Valid;
-
-@RestController
+@Controller
 public class IntToMonthController {
     private IntToMonthService serviceIntToMonth;
 
@@ -19,18 +18,13 @@ public class IntToMonthController {
     /**
      * Возвращает результат работы сервиса для получения название месяца (в виде "Я-Н-В-А-Р-Ь")
      * по его порядковому номеру
+     *
      * @param monthNumber Объект-оболочка для номера месяца
-     * @param bindingResult Объект с результатами валидации
      * @return Название месяца в виде строки
      */
-    @GetMapping("/getMonth")
-    public String getMonth (@Valid GetMonthRequest monthNumber, BindingResult bindingResult) {
-        if (bindingResult.hasErrors()) {
-            return bindingResult.getAllErrors().get(0).getDefaultMessage();
-        } else {
-            return serviceIntToMonth.getMonth(monthNumber);
-        }
-
+    @MessageMapping("/getMonth")
+    @SendTo("/topic/public")
+    public MonthResponce getMonth(GetMonthRequest monthNumber) {
+        return serviceIntToMonth.getMonth(monthNumber);
     }
-
 }

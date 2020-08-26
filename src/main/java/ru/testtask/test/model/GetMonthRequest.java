@@ -7,7 +7,7 @@ public class GetMonthRequest {
     /**
      * Поле номер месяца
      */
-    @Range(min = 1, max = 12, message = "INCORRECT INPUT DATA")
+    //@Range(min = 1, max = 12, message = "INCORRECT INPUT DATA")
     private int month;
 
     /**

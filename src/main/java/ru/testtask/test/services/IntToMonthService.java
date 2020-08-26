@@ -2,6 +2,7 @@ package ru.testtask.test.services;
 
 import org.springframework.stereotype.Service;
 import ru.testtask.test.model.GetMonthRequest;
+import ru.testtask.test.model.MonthResponce;
 
 import javax.annotation.PostConstruct;
 import java.util.HashMap;
@@ -17,8 +18,12 @@ public class IntToMonthService {
      * @param request Объект-оболочка для номера месяца
      * @return Название месяца в виде строки
      */
-    public String getMonth(GetMonthRequest request) {
-        return months.get(request.getMonth());
+    public MonthResponce getMonth(GetMonthRequest request) {
+        if (request.getMonth() < 1 || request.getMonth() > 12) {
+            return new MonthResponce("INCORRECT INPUT DATA");
+        } else {
+            return new MonthResponce(months.get(request.getMonth()));
+        }
     }
 
     /**
