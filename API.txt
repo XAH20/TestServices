@@ -1,36 +1,41 @@
+Сервисы работают по протоколу WebSocket
+
+Endpoints:
+Соединение /ws
+Запросы /app
+Ответы /topic
+
 1. Сервис получения названия месяца по его номеру
-Тип запроса - GET
-Endpoint - /getMonth
+
+MessageMapping - /app/getMonth
+SendTo - /topic/month
 Параметр "month" - число в интервале от 1 до 12
 
 Пример 1:
 
-Request:
-/getMonth?month=8
+Request: 8
 
 Response:
 А-В-Г-У-С-Т
 
 Пример 2:
 
-Request:
-/getMonth?month=0
+Request: 0
 
 Response:
 INCORRECT INPUT DATA
 
 2. Сервис преобразования и сортировки строк
-Тип запроса - POST
-Endpoint - /sortStrings
-В теле запроса - массив строк с именем "strings"
+
+MessageMapping - app/sortStrings
+SendTo - /topic/strings
+
+параметр "strings" - массив строк в формате JSON в виде строки
 
 Пример:
 
 Request:
-/sortStrings
-Body:
-{
-"strings": ["Тихо струится река серебристая",
+            ["Тихо струится река серебристая",
 
             "В царстве вечернем зеленой весны.",
 

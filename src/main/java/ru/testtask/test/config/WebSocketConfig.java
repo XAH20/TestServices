@@ -1,4 +1,4 @@
-package ru.testtask.test;
+package ru.testtask.test.config;
 
 import org.springframework.context.annotation.Configuration;
 import org.springframework.messaging.simp.config.MessageBrokerRegistry;

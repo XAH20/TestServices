@@ -23,7 +23,7 @@ public class IntToMonthController {
      * @return Название месяца в виде строки
      */
     @MessageMapping("/getMonth")
-    @SendTo("/topic/public")
+    @SendTo("/topic/month")
     public MonthResponce getMonth(GetMonthRequest monthNumber) {
         return serviceIntToMonth.getMonth(monthNumber);
     }

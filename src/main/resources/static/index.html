@@ -6,17 +6,35 @@
 
 </head>
 <body>
-<noscript><h2 style="color: #ff0000">Seems your browser doesn't support Javascript! Websocket relies on Javascript being enabled. Please enable
+<noscript><h2 style="color: #ff0000">Seems your browser doesn't support Javascript! Websocket relies on Javascript being
+    enabled. Please enable
     Javascript and reload this page!</h2></noscript>
 <div>
+    Сервис получения названия месяца по номеру
     <div>
-        <button id="connect" onclick="connect();">Подключиться</button>
-        <button id="disconnect" disabled="disabled" onclick="disconnect();">Отключиться</button>
+        <button id="connectMonthService" onclick="connectMonthService();">Подключиться</button>
+        <button id="disconnectMonthService" disabled="disabled" onclick="disconnectMonthService();">Отключиться</button>
     </div>
-    <div id="conversationDiv">
-        <label>Введите название месяца</label><input type="text" id="month" />
+    <div id="conversationDivMonth">
+        <label>Введите номер месяца</label><input type="text" id="month"/>
         <button id="sendMonth" onclick="sendMonth();">Отправить запрос</button>
-        <p id="response"></p>
+        <p id="responseMonth"></p>
+    </div>
+    Сервис получения сортировки строк
+    <div>
+        <button id="connectStringsService" onclick="connectStringsService();">Подключиться</button>
+        <button id="disconnectStringsService" disabled="disabled" onclick="disconnectStringsService();">Отключиться
+        </button>
+    </div>
+    <div id="conversationDivStrings">
+        <label>Введите строки в формате JSON</label>
+        <textarea id="strings" name="strings"
+                  style="padding-bottom:250px ;
+                    font-size:16px;
+                    height: 100px;
+                    width: 600px;"></textarea>
+        <button id="sendStrings" onclick="sendStrings();">Отправить запрос</button>
+        <p id="responseStrings"></p>
     </div>
 </div>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/sockjs-client/1.1.4/sockjs.min.js" charset="utf-8"></script>

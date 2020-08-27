@@ -5,13 +5,13 @@ public class ProcessStringsRequest {
     /**
      * Поле строки
      */
-    private String[] strings;
+    private String strings;
 
     /**
      * Геттер для массива строк из запроса
      * @return массив строк
      */
-    public String[] getStrings() {
+    public String getStrings() {
         return strings;
     }
 
@@ -19,7 +19,7 @@ public class ProcessStringsRequest {
      * Сеттер для массива строк из запроса
      * @param strings Строки
      */
-    public void setStrings(String[] strings) {
+    public void setStrings(String strings) {
         this.strings = strings;
     }
 }
