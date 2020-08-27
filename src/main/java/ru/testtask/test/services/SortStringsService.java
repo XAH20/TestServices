@@ -16,8 +16,8 @@ public class SortStringsService {
      * Сортирует строки:
      * по количеству символов, при одинаковом количестве - лексикографически.
      * Преобразует строки в вид: "(кол-во символов): Строка"
-     * @param request Объект-оболочка для массива строк
-     * @return Массив преобразованных и отсортироанных строк
+     * @param request Объект-оболочка для запроса
+     * @return Объект-оболочка с ответом (массив преобразованных и отсортироанных строк в формате JSON в виде строки)
      */
     public StringsResponce sortStrings (ProcessStringsRequest request) throws JsonProcessingException {
 

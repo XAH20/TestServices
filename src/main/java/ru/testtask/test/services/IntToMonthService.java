@@ -16,7 +16,7 @@ public class IntToMonthService {
     /**
      * Возвращает название месяца в виде строки (в виде "Я-Н-В-А-Р-Ь") по его порядковому номеру
      * @param request Объект-оболочка для номера месяца
-     * @return Название месяца в виде строки
+     * @return Объект-оболочка с ответом (название месяца в виде строки)
      */
     public MonthResponce getMonth(GetMonthRequest request) {
         if (request.getMonth() < 1 || request.getMonth() > 12) {

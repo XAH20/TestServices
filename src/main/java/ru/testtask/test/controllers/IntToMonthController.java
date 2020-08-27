@@ -20,7 +20,7 @@ public class IntToMonthController {
      * по его порядковому номеру
      *
      * @param monthNumber Объект-оболочка для номера месяца
-     * @return Название месяца в виде строки
+     * @return Объект-оболочка с ответом
      */
     @MessageMapping("/getMonth")
     @SendTo("/topic/month")

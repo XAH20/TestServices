@@ -24,7 +24,7 @@ public class SortStringsController {
      * по количеству символов, при одинаковом количестве - лексикографически.
      * Преобразует строки в вид: "(кол-во символов): Строка"
      * @param request Объект-оболочка для строк
-     * @return Отсортированные строки
+     * @return Объект-оболочка с ответом
      */
     @MessageMapping("/sortStrings")
     @SendTo("/topic/strings")
